@@ -1,5 +1,4 @@
-HiHome Home Security System
-Security system is based on Intel Galileo Board
+HiHome Home Security system is based on Intel Galileo Board
 - Features:
 -- Door alarm that rings, turns on the lamps and emails to used when its
 activated
