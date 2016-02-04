@@ -129,15 +129,15 @@ bool sendEmail()
   {
     emailScript.println("import smtplib");
     emailScript.println("try:");
-    emailScript.println("    fromaddr = 'sender@gmail.com'");
-    emailScript.println("    toaddrs = 'receiver@gmail.com'");
+    emailScript.println("    fromaddr = 'xxxxx@gmail.com'");
+    emailScript.println("    toaddrs = 'xxxxx@gmail.com'");
     emailScript.println("    msg = \"\\r\\n\".join([");  
-    emailScript.println("    \"From: sender@gmail.com\",");  
-    emailScript.println("    \"To: reveiver@gmail.com\",");  
+    emailScript.println("    \"From: mdemirst@gmail.com\",");  
+    emailScript.println("    \"To: mahmutdemir@gmail.com\",");  
     emailScript.println("    \"Subject: Door alarm, suspicious action is detected! \",");  
     emailScript.println("    ]\)");  
-    emailScript.println("    username = 'sender@gmail.com'");  
-    emailScript.println("    password = 'password'");  
+    emailScript.println("    username = 'xxxxxx@gmail.com'");  
+    emailScript.println("    password = 'xxxxxx'");  
     emailScript.println("    server = smtplib.SMTP\('smtp.gmail.com:587'\)");
     emailScript.println("    server.ehlo()");  
     emailScript.println("    server.starttls\(\)");  
@@ -150,9 +150,12 @@ bool sendEmail()
     
     emailScript.close(); 
     
-    delay(500);
-    system("python /media/realroot/emailScript.py > /media/realroot/emails.txt");  
+    //system("python /media/realroot/emailScript.py > /media/realroot/emails.txt");  
+    delay(100);
     
+    system("fswebcam -d /dev/video0 -r 160x120 /home/root/image.jpg");
+    delay(1000);
+    system("python home/root/sender.py");
     /*
     // Email sent results are stored in emails.txt
     emailScript = SD.open("emails.txt");  
